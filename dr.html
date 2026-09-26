@@ -1,0 +1,95 @@
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>Дима — история одной жизни</title>
+<style>
+:root{color-scheme:dark;--bg:#050505;--fg:#f7f7f7;--muted:#aaa;--line:#333}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1080px;margin:auto;padding:24px}
+header{min-height:72vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-bottom:1px solid var(--line);padding:64px 0}
+.eyebrow{letter-spacing:.25em;text-transform:uppercase;color:#aaa;font-size:.75rem}
+h1{font-size:clamp(3rem,12vw,8rem);line-height:.86;letter-spacing:-.07em;margin:24px 0 18px;font-weight:900}
+h1 span{display:block;color:transparent;-webkit-text-stroke:1px #eee}
+.lead{max-width:600px;color:#bbb;line-height:1.7}
+.pill{border:1px solid #777;border-radius:99px;padding:12px 20px;display:inline-block;color:#fff;text-decoration:none;margin-top:22px}
+h2{font-size:clamp(1.6rem,5vw,3rem);text-transform:uppercase;letter-spacing:-.04em;margin:0 0 10px}
+.section{padding:64px 0}
+.note{color:var(--muted);line-height:1.6;margin:0 0 28px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.photo{position:relative;aspect-ratio:4/5;background:#141414;border:1px solid #292929;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
+.photo .empty{position:absolute;inset:0;display:grid;place-items:center;color:#777;font-size:.8rem;letter-spacing:.12em;text-align:center;padding:12px}
+.photo .caption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 12px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.85rem}
+.photo .caption input{width:100%;background:transparent;border:0;border-bottom:1px solid #777;color:white;padding:5px 0;outline:none}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+button,.filelabel{font:inherit;background:#f5f5f5;color:#050505;border:0;padding:12px 16px;cursor:pointer;font-weight:700}
+input[type=file]{display:none}
+.audio{border:1px solid #333;padding:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+audio{width:min(100%,560px)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#888;font-size:.8rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:650px){.wrap{padding:18px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.section{padding:44px 0}header{min-height:65vh}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">SINCE 03 / 09 / 2009</div>
+  <h1>ДИМА<span>ДИМА</span></h1>
+  <p class="lead">Смотри, сколько всего произошло.<br>Маленькие моменты, большие воспоминания — одна история.</p>
+  <a class="pill" href="#memories">СМОТРЕТЬ ФОТОГРАФИИ ↓</a>
+</header>
+<main>
+<section class="section" id="memories">
+  <h2>История в кадрах</h2>
+  <p class="note">Детство, улыбки, приключения и моменты, которые хочется сохранить навсегда.</p>
+  <div class="gallery" id="gallery">
+  </div>
+</section>
+<section class="section">
+  <h2>Нажми play</h2>
+  <p class="note">Музыка к этой истории.</p>
+  <div class="audio">
+    <span aria-hidden="true">♫</span>
+    <audio controls="" preload="metadata">
+      <source src="Gigi Perez - Sailor Song (1).mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает аудио.
+    </audio>
+    <span class="note" style="margin:0">Файл: music/song.mp3</span>
+  </div>
+</section>
+<section class="section" style="text-align:center">
+  <div class="eyebrow">A CHILD BORN TO SHINE</div>
+  <h2 style="margin-top:18px">С днём рождения, Дима</h2>
+  <p class="lead" style="margin:18px auto">Пусть впереди будет ещё больше счастливых историй.<br>Ты всегда будешь тем самым мальчишкой с этих фотографий.</p>
+</section>
+</main>
+<footer><span>ДИМА · ЛИЧНЫЙ ФОТОАЛЬБОМ</span><span>Сделано с любовью</span></footer>
+</div>
+<script>
+/* Добавьте 10–20 фото в папку photos и впишите названия файлов сюда.
+   Например: {src:"photos/01.jpg", caption:"Самое начало"} */
+const PHOTOS = [
+  {src:"photo_5314627618118245336_x.jpg", caption:"Первые воспоминания"},
+  {src:"photo_5312436093875592772_y.jpg", caption:"Маленькие радости"},
+  {src:"photo_5312436093875592773_y.jpg", caption:"Любимый момент"},
+  {src:"photo_5312436093875592775_y.jpg", caption:"Приключения"},
+  {src:"photo_5312436093875592776_y.jpg", caption:"Счастливые дни"},
+  {src:"photo_5312436093875592777_y.jpg", caption:"Моменты детства"},
+  {src:"photo_5312436093875592778_y.jpg", caption:"Улыбка"},
+  {src:"photo_5312436093875592779_y.jpg", caption:"Незабываемый день"},
+  {src:"photo_5312436093875592774_y.jpg", caption:"Воспоминания"},
+  {src:"photo_5312436093875592780_y.jpg", caption:"Продолжение истории"}
+];
+const gallery=document.getElementById("gallery");
+PHOTOS.forEach((photo,i)=>{
+  const card=document.createElement("article"); card.className="photo";
+  const img=document.createElement("img"); img.src=photo.src; img.alt=photo.caption||`Фото ${i+1}`;
+  img.onerror=()=>{img.remove(); const empty=document.createElement("div");empty.className="empty";empty.textContent=`ФОТО ${String(i+1).padStart(2,"0")} · ДОБАВЬТЕ ФАЙЛ`;card.prepend(empty)};
+  const cap=document.createElement("div");cap.className="caption";cap.textContent=photo.caption||`Момент ${i+1}`;
+  card.append(img,cap);gallery.append(card);
+});
+</script>
+
+</body></html> 
